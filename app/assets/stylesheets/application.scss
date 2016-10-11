@@ -1,2 +1,9 @@
  // Custom bootstrap variables must be set or imported before bootstrap itself.
  @import "bootstrap";
+body {
+  background: url('bg.png');
+}
+
+#nav {
+    background-color: #00cc66;
+}

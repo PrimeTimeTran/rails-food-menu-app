@@ -24,10 +24,10 @@ img{max-width:100%;}
 /*end reset*/
 body{
 	font-family:"Century Gothic" Geneva Helvetica, sans-serif;
-	background: url('../images/bg.png');
+	background: url('bg.png');
 }
 .wrap{
-	margin:0 auto; 
+	margin:0 auto;
 	width: 96%;
 }
 h1{
@@ -82,7 +82,7 @@ h1{
 .wrap{
 	width: 90%;
 }
-}	
+}
 @media all and (max-width:1024px) and (min-width:800px){
 .wrap{
 	width: 90%;
