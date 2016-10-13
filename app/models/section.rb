@@ -7,4 +7,5 @@ class Section < ApplicationRecord
       Section.find_or_create_by(name: name)
     end
   end
+
 end

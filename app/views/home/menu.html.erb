@@ -10,8 +10,26 @@
 
 <% if @section %>
   <% @section.food_items.each do |food| %>
-    <h3><%= food.name %></h3>
-    <p><%= food.description %></p>
-    <%= image_tag("food.url") %>
+  <div class="card">
+
+    <div class="card-block">
+      <h3>Food Item:</h3>
+      <%= food.name %>
+    </div>
+
+    <div class="card-block">
+      <h3>Price:</h3>
+      <%= food.price %>
+    </div>
+
+    <div class="card-block">
+      <h3>Description:</h3>
+      <%= food.description %>
+    </div>
+    <div class="card-block">
+      <h3>Picture:</h3>
+      <%= image_tag food.image_url_or_auto %>
+    </div>
+  </div>
   <% end %>
 <% end %>
