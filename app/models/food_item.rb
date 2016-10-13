@@ -1,6 +1,7 @@
 class FoodItem < ApplicationRecord
   validates :name, :section, :price, presence: true
   belongs_to :section
+  has_many :orders # Testing this one out to see if it fixes the underfined method error
 
   def image_url_or_auto
     if image_url.present?

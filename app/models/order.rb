@@ -1,4 +1,4 @@
 class Order < ApplicationRecord
   belongs_to :food_item
-  validates :foot_item, :name, presence: true
+  validates :food_item, :name, presence: true
 end
