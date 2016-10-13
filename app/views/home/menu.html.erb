@@ -8,4 +8,10 @@
   <% end %>
 </ul>
 
-<%= @section.food_items %>
+<% if @section %>
+  <% @section.food_items.each do |food| %>
+    <h3><%= food.name %></h3>
+    <p><%= food.description %></p>
+    <%= image_tag("food.url") %>
+  <% end %>
+<% end %>
