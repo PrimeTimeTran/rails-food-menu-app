@@ -1,5 +1,5 @@
 <h1>Menu</h1>
-
+<!-- Block for displaying the menu -->
 <ul class="nav nav-pills">
   <% Section.all.each do |section| %>
   <li class="nav-item">
@@ -8,28 +8,33 @@
   <% end %>
 </ul>
 
+<!-- Menu Items -->
 <% if @section %>
   <% @section.food_items.each do |food| %>
   <div class="card">
 
     <div class="card-block">
-      <h3>Food Item:</h3>
-      <%= food.name %>
+      <h2>Food Item:</h2>
+        <h6><%= food.name %></h6>
+
+      <span class="label label-default">
+        <h2>Order Count:</h2>
+        <h6><%= food.orders.size %></h6>
+      </span>
+
+      <h2>Price:</h2>
+        <h6><%= food.price %></h6>
+
+      <h2>Description:</h2>
+        <h6><%= food.description %></h6>
+
+      <%= link_to 'Order', new_food_item_order_path(food.id), class: "btn btn-danger" %> 
     </div>
 
     <div class="card-block">
-      <h3>Price:</h3>
-      <%= food.price %>
+      <%= image_tag food.image_url_or_auto, style: "center" %>
     </div>
 
-    <div class="card-block">
-      <h3>Description:</h3>
-      <%= food.description %>
-    </div>
-    <div class="card-block">
-      <h3>Picture:</h3>
-      <%= image_tag food.image_url_or_auto %>
-    </div>
   </div>
   <% end %>
 <% end %>
