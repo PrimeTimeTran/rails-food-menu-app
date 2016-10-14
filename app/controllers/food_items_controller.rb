@@ -3,17 +3,16 @@ class FoodItemsController < ApplicationController
   # GET /food_items
   # GET /food_items.json
   def index
-    @food_items = FoodItem.all
-    @food_items = FoodItem.order(params[:sort])
-
-
-    @search = FoodItem.search(params[:q])
-    @food_items = @search.result
-    # Trying to Add Search Feature
-    if params[:name_search] || params[:description_search]
-      @food_items = FoodItem.search(name: params[:name_search], description: params[:description_search]).order("created_at DESC")
+    # Get food that matches a section, if supplied.
+    if params[:section].present?
+      @food_items = FoodItem.where(section: params[:section])
     else
-      @food_items = FoodItem.all.order('created_at DESC')
+      @food_items = FoodItem.all
+    end
+
+    # Sort by a column
+    if params[:sort].present?
+      @food_items = @food_items.order(params[:sort])
     end
   end
 

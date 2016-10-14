@@ -4,28 +4,3 @@
       <hr class="m-y-2">
   <%= link_to "Contact Us", contact_us_path, class: "btn btn-primary"  %><br>
 </div>
-
-
-<h1> Food Items </h1>
-
-<%= search_food_items_for @search do |f| %>
-  <div class="field">
-    <%= f.label :name_cont, "Name Contains" %>
-    <%= f.text_field :name_cont %>
-  </div>
-
-  <div class="actions"><%= f.submit "Search" %> </div>
-
-  <% end %>
-
-  <table id="food items">
-    <tr>
-      <th>Food Item Name</th>
-      <th>Release Date</th>
-      <th>Price</th>
-    </tr>
-    <% @food_items.each do |food| %>
-    <tr>
-      <td><%= link_to(food.name, food)%></td>
-    </tr>
-<% end %>

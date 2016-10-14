@@ -1,6 +1,5 @@
 <!-- Block for displaying the menu -->
 <h1>Menu</h1>
-<div class="row">
 <ul class="nav nav-pills">
   <% Section.all.each do |section| %>
   <li class="nav-item">
@@ -8,63 +7,28 @@
   </li>
   <% end %>
 </ul>
+
+<div class="card card-block">
+  <%= form_tag nil, method: 'get' do %>
+    <%= hidden_field_tag :section, params[:section] %>
+    <div class="form-inline">
+        <%= select_tag :sort_column, options_for_select([['Name', 'name'], ['Price', 'price']]), class: 'form-control' %>
+        <%= select_tag :sort_direction, options_for_select([['Asecending', 'asc'], ['Desencding', 'desc']]), class: 'form-control' %>
+        <%= submit_tag "Sort", class: "btn btn-secondary" %>
+      </div>
+      <% end %>
 </div>
 
-<!-- Menu Items
-<% if @section %>
-<%= link_to "Sort by Name", menu_path(section: @section.name, sort_by: 'alphabetical'), class: "btn btn-danger" %>
 
-  <% @section.food_items.each do |food| %>
+<% @food_items.each do |item| %>
+<div class="card">
+  <div class="card-header"><%= item.name %></div>
 
-  <div class="card" id="demo">
-
-    <div class="card-block">
-      <h1><%= food.section %></h1>
-      <h2>Food Item:</h2>
-        <h6><%= food.name %></h6>
-
-      <span class="label label-default">
-        <h2>Order Count:</h2>
-        <h6><%= food.orders.size %></h6>
-      </span>
-
-      <h2>Price:</h2>
-        <h6><%= food.price %></h6>
-
-      <h2>Description:</h2>
-        <h6><%= food.description %></h6>
-
-      <%= link_to 'Order', new_food_item_order_path(food.id), class: "btn btn-danger" %>
-    </div>
-
-    <div class="card-block">
-      <%= image_tag food.image_url_or_auto, style: "center" %>
-    </div>
-
+  <div class="card-block">
+    <h4>Price:</h4><%= item.price %><br>
+    <h4>Description:</h4><%= item.description %><br>
+    <%= link_to 'Order', new_food_item_order_path(item), class: "btn btn-danger" %>
+    <%= image_tag item.image_url_or_auto %>
   </div>
-  <% end %>
-<% end %>
--->
-
-<% if @section %>
-  <table class="table-hover col-sm-12" id="sortedTable">
-    <thead>
-      <tr>
-        <th><%= link_to "Food Name", :sort => "name" %></th>
-        <th><%= link_to "Price", :sort => "price" %></th>
-        <th>Submit Order</th>
-        <th>Picture</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @section.food_items.each do |food| %>
-    <tr>
-      <td><%= link_to food.name, food_items_path+"/#{food.id}" %></td>
-      <td><%= food.price %></td>
-      <td><%= link_to 'Order', new_food_item_order_path(food.id), class: "btn btn-danger" %></td>
-      <td><%= image_tag(food.image_url_or_auto) %></td>
-    </tr>
-    <% end %>
-  </tbody>
-  </table>
+</div>
 <% end %>
