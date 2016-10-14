@@ -18,7 +18,8 @@ gem 'coffee-rails', '~> 4.2'
 # Table Sort jQuery
 gem 'jquery-tablesorter'
 
-# Awesome Print
+# Ransack for Search Feature
+gem 'ransack'
 
 
 # Use jquery as the JavaScript library

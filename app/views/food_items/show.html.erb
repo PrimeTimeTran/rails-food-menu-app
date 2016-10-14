@@ -25,5 +25,5 @@
   <%= @food_item.section %>
 </p>
 
-<%= link_to 'Edit', edit_food_item_path(@food_item) %> |
-<%= link_to 'Back', food_items_path %>
+<%= link_to 'Edit', edit_food_item_path(@food_item), class: "btn btn-primary" %> |
+<%= link_to 'Order', new_food_item_order_path(@food_item.id), class: "btn btn-danger" %>

@@ -28,7 +28,7 @@
         </li>
       </ul>
       <form action="/search" class="form-inline pull-xs-right">
-        <input class="form-control" type="text" placeholder="Search">
+        <%= text_field_tag :name_search, params[:name_search], class: "form-control", placeholder: "Search Foods" %>
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </nav>

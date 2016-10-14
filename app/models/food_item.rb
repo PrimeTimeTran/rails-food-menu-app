@@ -15,4 +15,12 @@ class FoodItem < ApplicationRecord
     where(section: params[:section])
   end
 
+
+    def self.search(query_hash)
+       result = all
+       result = result.where("title like ?", "%#{query_hash[:name]}%") if query_hash[:name]
+       result = result.where("body like ?", "%#{query_hash[:description]}%") if query_hash[:description]
+       result
+    end
+
 end
