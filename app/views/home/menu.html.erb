@@ -1,5 +1,6 @@
-<h1>Menu</h1>
 <!-- Block for displaying the menu -->
+<h1>Menu</h1>
+<div class="row">
 <ul class="nav nav-pills">
   <% Section.all.each do |section| %>
   <li class="nav-item">
@@ -7,13 +8,18 @@
   </li>
   <% end %>
 </ul>
+</div>
 
-<!-- Menu Items -->
+<!-- Menu Items
 <% if @section %>
+<%= link_to "Sort by Name", menu_path(section: @section.name, sort_by: 'alphabetical'), class: "btn btn-danger" %>
+
   <% @section.food_items.each do |food| %>
-  <div class="card">
+
+  <div class="card" id="demo">
 
     <div class="card-block">
+      <h1><%= food.section %></h1>
       <h2>Food Item:</h2>
         <h6><%= food.name %></h6>
 
@@ -28,7 +34,7 @@
       <h2>Description:</h2>
         <h6><%= food.description %></h6>
 
-      <%= link_to 'Order', new_food_item_order_path(food.id), class: "btn btn-danger" %> 
+      <%= link_to 'Order', new_food_item_order_path(food.id), class: "btn btn-danger" %>
     </div>
 
     <div class="card-block">
@@ -37,4 +43,28 @@
 
   </div>
   <% end %>
+<% end %>
+-->
+
+<% if @section %>
+  <table class="table-hover col-sm-12" id="sortedTable">
+    <thead>
+      <tr>
+        <th>Food Name</th>
+        <th>Price</th>
+        <th>Submit Order</th>
+        <th>Picture</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @section.food_items.each do |food| %>
+    <tr>
+      <td><%= link_to food.name, food_items_path+"/#{food.id}" %></td>
+      <td><%= food.price %></td>
+      <td><%= link_to 'Order', new_food_item_order_path(food.id), class: "btn btn-danger" %></td>
+      <td><%= image_tag(food.image_url_or_auto) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
 <% end %>
