@@ -4,9 +4,9 @@
 
 Submitted by: **Loi Tran**
 
-Time spent: **0** hours spent in total (TODO)
+Time spent: **20** hours spent in total (TODO)
 
-URL: **heroku-app-url**
+URL: **https://git.heroku.com/cfoodz.git**
 
 ## User Stories
 
@@ -64,11 +64,11 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I felt like I had a ton of problems but thanks to the guys at CoderSchool I got through it.
 
 ## License
 
-    Copyright [2016] [name]
+    Copyright [2016] [PrimeTimeTran]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
