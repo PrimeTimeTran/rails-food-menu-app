@@ -58,13 +58,15 @@ The following **known issues**:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](path-to-your-GIF-file)
+![Video Walkthrough](http://i.imgur.com/PWAElE9.mp4)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 I felt like I had a ton of problems but thanks to the guys at CoderSchool I got through it.
+I'm going to continue working on this visually in the future but I'm submitting the bare minimum for right now.
+I plan on adding the optional features as well.
 
 ## License
 
