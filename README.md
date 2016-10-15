@@ -6,7 +6,7 @@ Submitted by: **Loi Tran**
 
 Time spent: **20** hours spent in total (TODO)
 
-URL: **https://git.heroku.com/cfoodz.git**
+URL: **https://cfoodz.herokuapp.com/**
 
 ## User Stories
 
@@ -58,7 +58,7 @@ The following **known issues**:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](http://i.imgur.com/PWAElE9.gifv)
+![Video Walkthrough](/licecap/BlogAPP.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
