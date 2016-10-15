@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   end
 
   def menu
-    if params[:section]
+    if params[:section].present?
       @section = Section.where(name: params[:section]).first
       @food_items = @section.food_items
     else
