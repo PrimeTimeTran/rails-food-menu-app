@@ -1,5 +1,5 @@
 <div class="card">
-  <div class="card-header"><%= food_item.name %></div>
+  <div class="card-header"><%= link_to food_item.name, food_items_path+"/#{food_item.id}" %></div>
     <div class="card-block">
       <h4>Price:</h4><%= food_item.price %><br><br>
       <h4>Description:</h4><%= food_item.description %><br><br>
