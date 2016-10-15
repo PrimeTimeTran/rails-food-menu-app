@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
+
   def index
+    if params[:search]
+      @food_items = FoodItem.where(['name ILIKE ?', "%#{params[:search]}%"])
+    end
   end
 
   def menu

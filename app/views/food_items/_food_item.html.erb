@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-header"><%= food_item.name %></div>
+    <div class="card-block">
+      <h4>Price:</h4><%= food_item.price %><br><br>
+      <h4>Description:</h4><%= food_item.description %><br><br>
+      <h4>Section:</h4><%= food_item.section.name %><br><br>
+      <%= image_tag food_item.image_url_or_auto, height: "100" %>
+    </div>
+</div>

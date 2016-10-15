@@ -16,9 +16,14 @@
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @food_item.image_url %>
+  <strong>Food Section:</strong>
+  <%= @food_item.section.name %>
 </p>
+<p>
+  <strong>Food Image:</strong>
+  <%= image_tag @food_item.image_url_or_auto %>
+</p>
+
 
 <!-- <p>
   <strong>Section:</strong>

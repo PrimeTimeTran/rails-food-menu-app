@@ -27,11 +27,13 @@
           <%= link_to "Contact Us", contact_us_path, class: "nav-link" %>
         </li>
       </ul>
-      <form action="/search" class="form-inline pull-xs-right">
-        <%= text_field_tag :name_search, params[:name_search], class: "form-control", placeholder: "Search Foods" %>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
+      <%= form_tag(root_path, :method => "get", class: "form-inline pull-xs-right") do %>
+             <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
+             <%= submit_tag "Search", class: "btn btn-outline-success" %>
+      <% end %>
     </nav>
+
   <div class="container">
     <% if flash[:error] %>
       <div class="alert alert-danger"><%= flash[:error] %> </div>
