@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
 
   def show
     @food_item = FoodItem.find params[:food_item_id]
-    @price = @food_item.price + 2
+    @price = @food_item.price
     @order = Order.find params[:id]
   end
 

@@ -1,9 +1,15 @@
-<h1>Orders Show</h1>
-  <h6>Name: </h6>
+<h1>Thank you for your Order!</h1>
+  <h3>Name: </h3>
     <p><%=  @order.name %></p>
-  <h6>Address: </h6>
+  <h3>Address: </h3>
     <p><%=  @order.address %></p>
-  <h6>Food Item:</h6>
+  <h3>Food Item:</h3>
     <p><%=  @food_item.name%></p>
-  <h6>Price: </h6>
+    <%= image_tag @food_item.image_url_or_auto %>
+
+  <h3>Food Item Price: </h3>
     <p><%=  @food_item.price %></p>
+  <h3>Final Price: </h3>
+    <p><%=  @food_item.price + 2 %></p>
+  <h3>Ordered At: </h3>
+    <p><%=  time_ago_in_words(@order.created_at) %></p>
