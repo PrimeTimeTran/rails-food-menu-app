@@ -1,0 +1,12 @@
+#menu {
+  display: table;
+}
+
+#menu .card-block {
+  width: 500px;
+  float: none;
+  display: table-cell;
+  vertical-align: top;
+  font:red;
+  background-color: #ABEAFF;
+}

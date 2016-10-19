@@ -1,3 +1,15 @@
 body.home.index {
-  background-image: url('http://www.designbolts.com/wp-content/uploads/2013/02/Cute-Grey-Tilable-Pattern-For-Website-Background.jpg');
+  margin: 0;
+  padding: 0;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEDOBsbeoqfKdsM_ZvflSqDb5ifn3m-sptrSiOMBS_eQmQJXsywA'); // Allows us to link a URL as the background image
+  background-attachment: fixed; // Makes the background stationary
+}
+
+.jumbotron {
+  margin-top: 32px; // Margin to the Top
+}
+
+
+.container {
+  height: 2000px;
 }
