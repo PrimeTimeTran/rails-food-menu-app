@@ -10,7 +10,7 @@ RSpec.describe FoodItem, :type => :model do
     expect(@foodItem).to be_valid
   end
 
-  it "is not valid without a title" do
+  it "is not valid without a name" do
     @foodItem.name = nil
     expect(@foodItem).to_not be_valid
   end
@@ -27,7 +27,6 @@ RSpec.describe FoodItem, :type => :model do
 
   it "description is at least 10 characters" do
     @foodItem.description = "Hello"
-    expect(@foodItem.description.length).to be > 10
+    expect(@foodItem).to_not be_valid
   end
-  
 end
