@@ -1,4 +1,4 @@
-body.home.index {
+body.index {
   margin: 0;
   padding: 0;
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEDOBsbeoqfKdsM_ZvflSqDb5ifn3m-sptrSiOMBS_eQmQJXsywA'); // Allows us to link a URL as the background image
@@ -6,10 +6,20 @@ body.home.index {
 }
 
 .jumbotron {
-  margin-top: 32px; // Margin to the Top
+  margin-top: 100px; // Margin to the Top
 }
-
 
 .container {
   height: 2000px;
+}
+
+.card-block {
+  width: 320px;
+  float: none;
+  display: table-cell;
+  vertical-align: top;
+  background-color: #ABEAFF;
+}
+.card-header{
+  width: 320px;
 }

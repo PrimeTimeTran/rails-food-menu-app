@@ -4,6 +4,8 @@ class FoodItemsController < ApplicationController
   # GET /food_items.json
   def index
     # Get food that matches a section, if supplied.
+    # render :nothing => true, :status => :service_unavailable
+
     if params[:section].present?
       @food_items = FoodItem.where(section: params[:section])
     else
