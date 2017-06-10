@@ -5,12 +5,4 @@
         <hr class="m-y-2">
     <%= link_to "Contact Us", contact_us_path, class: "btn btn-primary"  %><br>
   </div>
-
-  <div class="row <%= controller_name %>" id="menu">
-    <% if @food_items.present? %>
-      <%= render @food_items %>
-  </div>
-    <% elsif params[:search] %>
-      <p>There are no food item containing the term(s) <%= params[:search] %>.</p>
-    <% end %>
 </div>

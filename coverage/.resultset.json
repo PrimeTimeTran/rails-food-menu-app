@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Lois/Desktop/win/food/app/helpers/application_helper.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/helpers/application_helper.rb": [
         1,
         null,
         1,
@@ -18,33 +18,30 @@
         null,
         null
       ],
-      "/Users/Lois/Desktop/win/food/app/helpers/food_items_helper.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/helpers/food_items_helper.rb": [
         1,
         null
       ],
-      "/Users/Lois/Desktop/win/food/app/helpers/home_helper.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/helpers/home_helper.rb": [
         1,
         null
       ],
-      "/Users/Lois/Desktop/win/food/app/helpers/orders_helper.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/helpers/orders_helper.rb": [
         1,
         null
       ],
-      "/Users/Lois/Desktop/win/food/app/controllers/food_items_controller.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/controllers/food_items_controller.rb": [
         1,
         1,
         null,
         null,
         1,
-        null,
-        null,
-        null,
         2,
+        0,
         null,
         0,
         null,
         2,
-        null,
         null,
         null,
         2,
@@ -118,12 +115,12 @@
         null,
         null
       ],
-      "/Users/Lois/Desktop/win/food/app/controllers/application_controller.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/Lois/Desktop/win/food/app/models/food_item.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/models/food_item.rb": [
         1,
         1,
         1,
@@ -143,12 +140,12 @@
         null,
         null
       ],
-      "/Users/Lois/Desktop/win/food/app/models/application_record.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/Lois/Desktop/win/food/app/models/section.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/models/section.rb": [
         1,
         1,
         1,
@@ -161,7 +158,7 @@
         null,
         null
       ],
-      "/Users/Lois/Desktop/win/food/app/controllers/home_controller.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/controllers/home_controller.rb": [
         1,
         null,
         1,
@@ -172,6 +169,8 @@
         null,
         1,
         0,
+        0,
+        null,
         0,
         0,
         null,
@@ -187,19 +186,19 @@
         null,
         null
       ],
-      "/Users/Lois/Desktop/win/food/app/channels/application_cable/channel.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/Lois/Desktop/win/food/app/channels/application_cable/connection.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/Lois/Desktop/win/food/app/controllers/orders_controller.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/controllers/orders_controller.rb": [
         0,
         0,
         0,
@@ -233,23 +232,23 @@
         0,
         0
       ],
-      "/Users/Lois/Desktop/win/food/app/jobs/application_job.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/Users/Lois/Desktop/win/food/app/mailers/application_mailer.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/Lois/Desktop/win/food/app/models/order.rb": [
+      "/Users/Lois/Desktop/win/hw1/app/models/order.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1496143890
+    "timestamp": 1497109471
   }
 }

@@ -2,11 +2,12 @@
   <%= notice %>
 </h4>
   <div class="container">
-    <h5><%= @food_item.name %></h5>
-      <%= image_tag @food_item.image_url_or_auto %> <br>
+    <div>
+      <h1><%= @food_item.name %></h1>
+      <p>$<%= @food_item.price %></p>
+    </div>
+      <%= image_tag @food_item.image_url_or_auto %> <br><br>
       <%= @food_item.description %>
-    <h5>Price:</h5>
-      <%= @food_item.price %>
     <h5>Food Section:</h5>
       <%= @food_item.section.name %><br/ >
 

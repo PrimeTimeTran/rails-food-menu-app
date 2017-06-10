@@ -17,12 +17,12 @@
 
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_area :description, class: "form-control" %>
-  </div>
+    <%= f.text_area :description, class: "form-control", size: "5x5" %>
+  </div><br>
 
   <div class="field">
     <%= f.label :price %>
-    <%= f.text_field :price, class: "form-control" %>
+    <%= f.number_field(:price, in: 5.0..30.0, step: 0.5) %>
   </div>
 
   <div class="field">
