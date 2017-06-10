@@ -7,10 +7,10 @@
   </div>
 
   <div class="row <%= controller_name %>" id="menu">
-      <% if @food_items.present? %>
-        <%= render @food_items %>
+    <% if @food_items.present? %>
+      <%= render @food_items %>
   </div>
-      <% elsif params[:search] %>
-        <p>There are no food item containing the term(s) <%= params[:search] %>.</p>
-      <% end %>
+    <% elsif params[:search] %>
+      <p>There are no food item containing the term(s) <%= params[:search] %>.</p>
+    <% end %>
 </div>

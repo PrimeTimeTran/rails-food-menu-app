@@ -3,16 +3,14 @@ class FoodItemsController < ApplicationController
   # GET /food_items
   # GET /food_items.json
   def index
-    # Get food that matches a section, if supplied.
-    # render :nothing => true, :status => :service_unavailable
-
-    if params[:section].present?
-      @food_items = FoodItem.where(section: params[:section])
+    if params[:search].present?
+      @food_items = FoodItem.where(['name ILIKE ?', "%#{params[:search]}%"])
+    elsif params[:section_id].present?
+      @food_items = FoodItem.where(section_id: params[:section_id])
     else
       @food_items = FoodItem.all
     end
 
-    # Sort by a column
     if params[:sort].present?
       @food_items = @food_items.order(params[:sort])
     end

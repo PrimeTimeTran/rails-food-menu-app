@@ -2,7 +2,6 @@
   <% if food_item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(food_item.errors.count, "error") %> prohibited this food_item from being saved:</h2>
-
       <ul>
       <% food_item.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -33,7 +32,8 @@
 
   <div class="field">
     <%= f.label :section_id %>
-    <%= f.text_field :section_id, class: "form-control" %>
+    <% sections = Section.all.map { |section| [section.name, section.id] } %>
+    <%= f.select(:section_id, options_for_select(sections)) %>
   </div><br>
 
   <div class="actions">

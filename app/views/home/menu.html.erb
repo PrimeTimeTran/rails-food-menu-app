@@ -1,36 +1,40 @@
 <!-- Block for displaying the menu -->
 <h1>Menu</h1>
-<ul class="nav nav-pills">
-  <% Section.all.each do |section| %>
-  <li class="nav-item">
-    <%= link_to section.name, menu_path(section: section.name), class: "nav-link #{'active' if params[:section] == section.name}" %>
-  </li>
-  <% end %>
-</ul>
 
-<div class="card card-block">
-  <%= form_tag nil, method: 'get' do %>
-    <%= hidden_field_tag :section, params[:section] %>
-    <div class="form-inline">
-        <%= select_tag :sort_column, options_for_select([['Name', 'name'], ['Price', 'price']]), class: 'form-control' %>
-        <%= select_tag :sort_direction, options_for_select([['Asecending', 'asc'], ['Desencding', 'desc']]), class: 'form-control' %>
-        <%= submit_tag "Sort", class: "btn btn-secondary" %>
-      </div>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <div>
+    <div class="navbar-nav">
+      <% Section.all.each do |section| %>
+        <%= link_to section.name, menu_path(section_id: section.id), class: "nav-item nav-link #{'active' if params[:section_id] == section.id}" %>
       <% end %>
-</div>
 
-
-<!-- Custom CSS -->
-<div class="row <%= controller_name %>" id="menu">
-  <% @food_items.each do |item| %>
-  <div class="col-md-4">
-    <div class="card-header"><%= link_to item.name, food_items_path+"/#{item.id}" %></div>
-        <%= image_tag item.image_url_or_auto, class: "card-img-top" %>
-      <div class="card-block">
-        <h4>Price:</h4><%= item.price %>
-        <h4>Description:</h4><%= item.description %>
-        <h4>Section:</h4><%= item.section.name %><br>
-        <%= link_to 'Order', new_food_item_order_path(item), class: "btn btn-danger" %>
+    <%= form_tag nil, method: 'get' do %>
+      <%= hidden_field_tag :section_id, params[:section_id] %>
+        <div class="pull-lg-right">
+          <%= select_tag :sort_column, options_for_select([['Name', 'name'], ['Price', 'price']]) %>
+          <%= select_tag :sort_direction, options_for_select([['Asecending', 'asc'], ['Desencding', 'desc']]) %>
+          <%= submit_tag "Sort", class: "btn btn-outline-success" %>
+        </div>
+    <% end %>
   </div>
+</nav><br>
+
+<div class="row">
+  <% @food_items.each do |item| %>
+    <div class="col-md-4">
+      <div class="card" style="width: 20rem;">
+        <%= image_tag item.image_url_or_auto, class: "card-img-top" %>
+        <div class="card-block">
+          <h4 class="card-title"><%= link_to item.name, food_items_path+"/#{item.id}" %></h4><p>$<%= item.price %></p>
+          <p class="card-text">
+            <h4>Description:</h4>
+            <p class="description"><%= item.description %></p>
+            <h4>Section:</h4>
+            <p><%= item.section.name %></p>
+          </p>
+          <%= link_to 'Order', new_food_item_order_path(item), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
-<% end %>

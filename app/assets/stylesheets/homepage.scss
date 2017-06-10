@@ -1,25 +1,10 @@
-body.index {
-  margin: 0;
-  padding: 0;
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEDOBsbeoqfKdsM_ZvflSqDb5ifn3m-sptrSiOMBS_eQmQJXsywA'); // Allows us to link a URL as the background image
-  background-attachment: fixed; // Makes the background stationary
-}
-
-.jumbotron {
-  margin-top: 100px; // Margin to the Top
-}
-
-.container {
-  height: 2000px;
-}
-
-.card-block {
-  width: 320px;
-  float: none;
-  display: table-cell;
-  vertical-align: top;
-  background-color: #ABEAFF;
-}
-.card-header{
-  width: 320px;
+.description {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  margin: 0 auto;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 50px;
 }

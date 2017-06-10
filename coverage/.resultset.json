@@ -39,14 +39,15 @@
         null,
         null,
         null,
-        3,
+        2,
+        null,
         0,
         null,
-        3,
+        2,
         null,
         null,
         null,
-        3,
+        2,
         0,
         null,
         null,
@@ -184,7 +185,6 @@
         null,
         1,
         null,
-        null,
         null
       ],
       "/Users/Lois/Desktop/win/food/app/channels/application_cable/channel.rb": [
@@ -250,6 +250,6 @@
         0
       ]
     },
-    "timestamp": 1495884845
+    "timestamp": 1496143890
   }
 }

@@ -7,8 +7,10 @@ class HomeController < ApplicationController
   end
 
   def menu
-    if params[:section].present?
-      @section = Section.where(name: params[:section]).first
+    if params[:search]
+      @food_items = FoodItem.where(['name ILIKE ?', "%#{params[:search]}%"])
+    elsif params[:section_id].present?
+      @section = Section.where(id: params[:section_id]).first
       @food_items = @section.food_items
     else
       @food_items = FoodItem.all
@@ -21,5 +23,4 @@ class HomeController < ApplicationController
 
   def contact_us
   end
-
 end
