@@ -8,7 +8,18 @@ html, body {
     color: white;
   }
 }
-
+hr {
+  display: block;
+  border-color: white;
+}
+.jumbotron {
+  color: white;
+  background: url("table.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 #menu {
   background-color: #254175;
   a {
@@ -26,6 +37,10 @@ html, body {
   display: block;
   padding-top: .425rem;
   padding-bottom: .425rem;
+}
+section {
+  background-image: url("table.jpg");
+  height: 500px;
 }
 .section {
   background-color: pink;

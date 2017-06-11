@@ -16,4 +16,6 @@
 //= require tether
 //= require bootstrap
 //= require bootstrap-sprockets
+//= require custom
+//= require modal
 //= require_tree .
