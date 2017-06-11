@@ -1,0 +1,21 @@
+<header id="content-header">
+  <h1>New Review for <%= link_to(@food_item.name, @food_item) %></h1>
+</header>
+<%= form_for([@food_item, @review]) do |f| %>
+  <fieldset>
+    <ol>
+      <li class="required stars">
+        <%= f.label :stars %>
+        <%= f.select :stars, Review::STARS, prompt: "Pick one" %>
+      </li>
+      <li class="required">
+        <%= f.label :review %>
+        <%= f.text_area :review, cols: 80, placeholder: "What did you think?" %>
+      </li>
+    </ol>
+    <p>
+      <%= f.submit 'Post Review' %>
+      <%= link_to "Cancel", @food_item, class: 'button' %>
+    </p>
+  </fieldset>
+<% end %>

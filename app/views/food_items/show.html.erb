@@ -1,17 +1,30 @@
-<h4 id="notice">
-  <%= notice %>
-</h4>
-  <div class="container">
-    <div>
-      <h1><%= @food_item.name %></h1>
-      <p>$<%= @food_item.price %></p>
-      <h4>View Count:</h4><%= @food_item.view_count %><br><br>
-    </div>
-      <%= image_tag @food_item.image_url_or_auto %> <br><br>
-      <%= @food_item.description %>
-    <h5>Food Section:</h5>
-      <%= @food_item.section.name %><br/ >
+<div class="container">
+  <h4 id="notice">
+    <%= notice %>
+  </h4>
+    <div class="container">
+      <div>
+        <h1><%= @food_item.name %></h1>
+        <p>$<%= @food_item.price %></p>
+        <h4>View Count:</h4><%= @food_item.view_count %><br><br>
+      </div>
+        <%= image_tag @food_item.image_url_or_auto %> <br><br>
+        <%= @food_item.description %>
+      <h5>Food Section:</h5>
+        <%= @food_item.section.name %><br/ >
 
-    <%= link_to 'Edit', edit_food_item_path(@food_item), class: "btn btn-primary" %> |
-    <%= link_to 'Order', new_food_item_order_path(@food_item.id), class: "btn btn-danger" %>
-  </div>
+      <%= link_to 'Edit', edit_food_item_path(@food_item), class: "btn btn-primary" %> |
+      <%= link_to 'Order', new_food_item_order_path(@food_item.id), class: "btn btn-danger" %>
+    </div>
+    <%= link_to pluralize(@food_item.reviews.size, "review"),
+              food_item_reviews_path(@food_item) %>
+              
+  <footer>
+    <nav>
+      <%= link_to "Write Review", new_food_item_review_path(@food_item),
+             class: 'button ok review' %><br><br>
+      <%= link_to 'Edit', edit_food_item_review_path(@food_item), class: 'button' %>
+      <%= link_to 'Delete', food_item_path(@food_item), class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
+    </nav>
+  </footer>
+</div>

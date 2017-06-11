@@ -3,6 +3,7 @@ class FoodItem < ApplicationRecord
   validates :description, length: { minimum: 10 }, presence: true
   belongs_to :section
   has_many :orders, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   def image_url_or_auto
     if image_url.present?
