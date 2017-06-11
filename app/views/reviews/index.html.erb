@@ -5,7 +5,6 @@
   <% @reviews.each do |review| %>
     <li>
       <span class="review"><%= pluralize(review.stars, 'star') %></span>
-      <span class="user">by <%= review.review %></span>
       <span class="date"><%= time_ago_in_words(review.created_at) %> ago</span>
       <p>
         &quot;<%= review.review %>&quot;

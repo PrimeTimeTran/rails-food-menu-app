@@ -1,7 +1,7 @@
 <!-- Block for displaying the menu -->
 <h1>Menu</h1>
 
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar" id="menu">
   <div>
     <div class="navbar-nav">
       <% Section.all.each do |section| %>
@@ -13,7 +13,7 @@
         <div class="pull-lg-right">
           <%= select_tag :sort_column, options_for_select([['Name', 'name'], ['Price', 'price']]) %>
           <%= select_tag :sort_direction, options_for_select([['Asecending', 'asc'], ['Desencding', 'desc']]) %>
-          <%= submit_tag "Sort", class: "btn btn-outline-success" %>
+          <%= submit_tag "Sort", class: "btn btn-sm btn-success" %>
         </div>
     <% end %>
   </div>
@@ -31,6 +31,9 @@
             <p class="description"><%= item.description %></p>
             <h4>Section:</h4>
             <p><%= item.section.name %></p>
+            <% unless item.reviews.size == 0 %>
+              <%= link_to pluralize(item.reviews.size, "review"), food_item_reviews_path(item) %>
+            <% end %>
           </p>
           <%= link_to 'Order', new_food_item_order_path(item), class: "btn btn-primary" %>
         </div>

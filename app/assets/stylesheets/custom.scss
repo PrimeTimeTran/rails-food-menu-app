@@ -1,0 +1,44 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.navbar {
+  background-color: #8E1010;
+  li a {
+    color: white;
+  }
+}
+
+#menu {
+  background-color: #B02B2B;
+  a {
+    color: white;
+  }
+}
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -100px;
+}
+.pull-lg-right {
+  display: block;
+  padding-top: .425rem;
+  padding-bottom: .425rem;
+}
+.section {
+  background-color: pink;
+  height: 500px;
+}
+.footer {
+  background-color: #B02B2B;
+}
+.footer, .push {
+  height: 100px;
+}
+.footer .container {
+  margin-top: 100px;
+  padding-top: 15px;
+  height: 100px;
+}
