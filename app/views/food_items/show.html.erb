@@ -5,6 +5,7 @@
     <div>
       <h1><%= @food_item.name %></h1>
       <p>$<%= @food_item.price %></p>
+      <h4>View Count:</h4><%= @food_item.view_count %><br><br>
     </div>
       <%= image_tag @food_item.image_url_or_auto %> <br><br>
       <%= @food_item.description %>

@@ -1,27 +1,22 @@
 <h1>
   <small>Order For</small> <%= @food_item.name %>
 </h1>
+  <%= form_for [@food_item, Order.new] do |f| %>
 
-<div class="row">
-  <div class="col-sm-4">
-      <%= form_for [@food_item, Order.new] do |f| %>
+  <fieldset class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control'%>
+  </fieldset>
 
-      <fieldset class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control'%>
-      </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :phone %>
+    <%= f.text_field :phone, class: 'form-control'%>
+  </fieldset>
 
-      <fieldset class="form-group">
-        <%= f.label :phone %>
-        <%= f.text_field :phone, class: 'form-control'%>
-      </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :address %>
+    <%= f.text_area :address, class: 'form-control'%>
+  </fieldset>
 
-      <fieldset class="form-group">
-        <%= f.label :address %>
-        <%= f.text_area :address, class: 'form-control'%>
-      </fieldset>
-
-      <%= f.submit "Submit Order", class: 'btn-primary' %>
-      <% end %>
-  </div>
-</div>
+  <%= f.submit "Submit Order", class: 'btn-primary' %>
+  <% end %>
