@@ -6,7 +6,6 @@
     <link rel="icon" type="image/png" href="/assets/favicon.ico">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= yield :js %>
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
@@ -41,9 +40,11 @@
          <%= submit_tag "Search", class: "btn btn-success" %>
       <% end %>
     </nav><br />
-    
+
     <!-- Flash -->
-    <%= flash_messages %>
+    <div class="container">
+      <%= flash_messages %>
+    </div>
 
     <div class="container wrapper">
       <%= yield %>

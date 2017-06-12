@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'simplecov', :require => false, :group => :test
 gem 'pry'
 
+gem 'devise'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
