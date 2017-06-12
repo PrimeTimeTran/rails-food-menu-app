@@ -1,4 +1,5 @@
 class FoodItem < ApplicationRecord
+  belongs_to :user 
   validates :name, :section, :price, presence: true
   validates :description, length: { minimum: 10 }, presence: true
   belongs_to :section

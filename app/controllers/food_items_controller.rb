@@ -27,7 +27,7 @@ class FoodItemsController < ApplicationController
 
   # GET /food_items/new
   def new
-    @food_item = FoodItem.new
+    @food_item = current_user.food_items.build
   end
 
   # GET /food_items/1/edit
@@ -37,7 +37,7 @@ class FoodItemsController < ApplicationController
   # POST /food_items
   # POST /food_items.json
   def create
-    @food_item = FoodItem.new(food_item_params)
+    @food_item = current_user.food_items.build(food_item_params)
 
     respond_to do |format|
       if @food_item.save

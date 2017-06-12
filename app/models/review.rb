@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
+  belongs_to :user
   belongs_to :food_item
   validates :review, presence: true, length: { minimum: 4 }
 
