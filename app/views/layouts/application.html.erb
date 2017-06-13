@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Restaurant</title>
+    <title>CS Restaurant</title>
     <%= csrf_meta_tags %>
     <link rel="icon" type="image/png" href="/assets/favicon.ico">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,43 +9,52 @@
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
-    <!-- Navigation -->
-    <nav class="navbar">
-      <ul class="nav navbar-nav">
-        <li class="nav-item">
-          <%= link_to root_path, class: "navbar-brand" do %>
-            CoderSchool Restaurant
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to menu_path, class: "nav-link" do %>
-            <i class="fa fa-book"></i> Menu
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to contact_us_path, class: "nav-link" do %>
-            <i class="fa fa-phone"></i> Contact Us
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to new_food_item_path, class: "nav-link" do %>
-            <i class="fa fa-plus"></i> New Item
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to new_user_registration_path, class: "nav-link" do %>
-            <i class=""></i> Sign Up
-          <% end %>
-        </li>
-      </div>
-      </ul>
 
-      <%= form_tag(menu_path, :method => "get", class: "form-inline pull-xs-right") do %>
-         <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
-         <%= submit_tag "Search", class: "btn btn-success" %>
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <%= link_to root_path, class: "navbar-brand" do %>
+        CS Restaurant
       <% end %>
-    </nav><br />
 
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to menu_path, class: "nav-link" do %>
+              <i class="fa fa-book"></i> Menu
+            <% end %>
+            <% if current_user %>
+              <li class="nav-item">
+                <%= link_to new_food_item_path, class: "nav-link" do %>
+                  <i class="fa fa-plus"></i> New Item
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+                  <i class=""></i> Log Out
+                <% end %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to new_user_registration_path, class: "nav-link" do %>
+                  <i class=""></i> Sign Up
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to new_user_session_path, class: "nav-link" do %>
+                  <i class=""></i> Log In
+                <% end %>
+              </li>
+            <% end %>
+        </ul>
+        <%= form_tag(menu_path, :method => "get", class: "form-inline pull-xs-right") do %>
+           <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
+           <%= submit_tag "Search", class: "btn btn-success" %>
+        <% end %>
+    </div>
+  </nav>
     <!-- Flash -->
     <div class="container">
       <%= flash_messages %>

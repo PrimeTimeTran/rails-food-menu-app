@@ -14,7 +14,12 @@
       <h5>Food Section:</h5>
         <%= @food_item.section.name %><br/ >
 
-      <%= link_to 'Edit', edit_food_item_path(@food_item), class: "btn btn-primary" %> |
+      <% if user_signed_in?  %>
+        <% if @food_item.user_id == current_user.id %>
+          <%= link_to 'Edit', edit_food_item_path(@food_item), class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+
       <%= link_to 'Order', new_food_item_order_path(@food_item.id), class: "btn btn-danger" %>
     </div>
 

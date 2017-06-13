@@ -60,6 +60,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'bootstrap', '~> 4.0.0.alpha4'
+  gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
 gem 'rails-assets-tether'
 gem "font-awesome-rails"

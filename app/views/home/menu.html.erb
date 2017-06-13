@@ -1,12 +1,8 @@
-<!-- Block for displaying the menu -->
 <h1>Menu</h1>
-
-<nav class="navbar" id="menu">
-  <div>
-    <div class="navbar-nav">
-      <% Section.all.each do |section| %>
-        <%= link_to section.name, menu_path(section_id: section.id), class: "nav-item nav-link #{'active' if params[:section_id] == section.id}" %>
-      <% end %>
+  <nav class="nav">
+    <% Section.all.each do |section| %>
+      <%= link_to section.name, menu_path(section_id: section.id), class: "nav-link #{'active' if params[:section_id] == section.id}" %>
+    <% end %>
 
     <%= form_tag nil, method: 'get' do %>
       <%= hidden_field_tag :section_id, params[:section_id] %>
@@ -14,10 +10,8 @@
           <%= select_tag :sort_column, options_for_select([['Name', 'name'], ['Price', 'price']]) %>
           <%= select_tag :sort_direction, options_for_select([['Asecending', 'asc'], ['Desencding', 'desc']]) %>
           <%= submit_tag "Sort", class: "btn btn-sm btn-success" %>
-        </div>
     <% end %>
-  </div>
-</nav><br>
+  </nav>
 
 <div class="row">
   <% @food_items.each do |item| %>
@@ -25,7 +19,7 @@
       <div class="card" style="width: 20rem;">
         <%= image_tag item.image_url_or_auto, class: "card-img-top" %>
         <div class="card-block">
-          <h4 class="card-title"><%= link_to item.name, food_items_path+"/#{item.id}" %></h4><p>$<%= item.price %></p>
+          <h4 class="card-title"><%= link_to item.name, food_items_path+"/#{item.id}" %></h4><p>$<%= item.price %>0</p>
           <p class="card-text">
             <h4>Description:</h4>
             <p class="description"><%= item.description %></p>
