@@ -1,17 +1,21 @@
 <h1>Menu</h1>
-  <nav class="nav">
-    <% Section.all.each do |section| %>
-      <%= link_to section.name, menu_path(section_id: section.id), class: "nav-link #{'active' if params[:section_id] == section.id}" %>
-    <% end %>
-
+<div class="row">
+  <div class="col-md-9 col-md-push-3">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <% Section.all.each do |section| %>
+        <%= link_to section.name, menu_path(section_id: section.id), class: "btn btn-secondary #{'active' if params[:section_id] == section.id.to_s}" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-3 col-md-pull-9">
     <%= form_tag nil, method: 'get' do %>
       <%= hidden_field_tag :section_id, params[:section_id] %>
-        <div class="pull-lg-right">
-          <%= select_tag :sort_column, options_for_select([['Name', 'name'], ['Price', 'price']]) %>
-          <%= select_tag :sort_direction, options_for_select([['Asecending', 'asc'], ['Desencding', 'desc']]) %>
-          <%= submit_tag "Sort", class: "btn btn-sm btn-success" %>
+        <%= select_tag :sort_column, options_for_select([['Name', 'name'], ['Price', 'price']]) %>
+        <%= select_tag :sort_direction, options_for_select([['Asecending', 'asc'], ['Desencding', 'desc']]) %>
+        <%= submit_tag "Sort", class: "btn btn-sm btn-success" %>
     <% end %>
-  </nav>
+  </div>
+</div>
 
 <div class="row">
   <% @food_items.each do |item| %>
