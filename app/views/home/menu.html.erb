@@ -3,7 +3,7 @@
   <div class="col-md-9 col-md-push-3">
     <div class="btn-group" role="group" aria-label="Basic example">
       <% Section.all.each do |section| %>
-        <%= link_to section.name, menu_path(section_id: section.id), class: "btn btn-secondary #{'active' if params[:section_id] == section.id.to_s}" %>
+        <%= link_to section.name, menu_path(section_id: section.id), class: "btn #{params[:section_id] == section.id.to_s ? 'btn-primary' : 'btn-secondary'}" %>
       <% end %>
     </div>
   </div>
@@ -23,7 +23,7 @@
       <div class="card" style="width: 20rem;">
         <%= image_tag item.image_url_or_auto, class: "card-img-top" %>
         <div class="card-block">
-          <h4 class="card-title"><%= link_to item.name, food_items_path+"/#{item.id}" %></h4><p>$<%= item.price %>0</p>
+          <h4 class="card-title"><%= link_to item.name, food_items_path+"/#{item.id}" %></h4><p><%= number_to_currency(item.price) %></p>
           <p class="card-text">
             <h4>Description:</h4>
             <p class="description"><%= item.description %></p>
