@@ -1,10 +1,10 @@
 class FoodItem < ApplicationRecord
-  belongs_to :user 
+  belongs_to :user
+  belongs_to :section
+  has_many :order_items
+  has_many :reviews, dependent: :destroy
   validates :name, :section, :price, presence: true
   validates :description, length: { minimum: 10 }, presence: true
-  belongs_to :section
-  has_many :orders, dependent: :destroy
-  has_many :reviews, dependent: :destroy
 
   def image_url_or_auto
     if image_url.present?

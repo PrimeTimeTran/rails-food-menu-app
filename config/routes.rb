@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  resources :orders
   resources :food_items do
     # food_items/:food_item_id/orders/new
-      resources :orders
       resources :reviews
     end
   get 'menu' => 'home#menu'
