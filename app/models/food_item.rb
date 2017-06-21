@@ -14,6 +14,10 @@ class FoodItem < ApplicationRecord
     end
   end
 
+  def new_order_item
+    order_items.build
+  end
+
   def self.filter_by_section(section)
     where(section: params[:section])
   end

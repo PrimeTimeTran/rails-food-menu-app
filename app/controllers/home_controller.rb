@@ -7,6 +7,8 @@ class HomeController < ApplicationController
   end
 
   def menu
+    @order_item = OrderItem.new
+
     if params[:search]
       @food_items = FoodItem.where(['name ILIKE ?', "%#{params[:search]}%"])
     elsif params[:section_id].present?

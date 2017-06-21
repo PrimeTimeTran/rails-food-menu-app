@@ -36,6 +36,11 @@
                   <i class=""></i> Log Out
                 <% end %>
               </li>
+              <li class="nav-item">
+                <%= link_to order_items_path, class: "nav-link" do %>
+                  <i class=""></i> Cart
+                <% end %>
+              </li>              
             <% else %>
               <li class="nav-item">
                 <%= link_to new_user_registration_path, class: "nav-link" do %>

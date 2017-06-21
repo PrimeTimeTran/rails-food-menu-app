@@ -23,7 +23,7 @@
       <div class="card" style="width: 20rem;">
         <%= image_tag item.image_url_or_auto, class: "card-img-top" %>
         <div class="card-block">
-          <h4 class="card-title"><%= link_to item.name, food_items_path+"/#{item.id}" %></h4><p><%= number_to_currency(item.price) %></p>
+          <h4 class="card-title"><%= link_to item.name, food_items_path+"/#{item.id}" %></h4><p>
           <p class="card-text">
             <h4>Description:</h4>
             <p class="description"><%= item.description %></p>
@@ -33,7 +33,16 @@
               <%= link_to pluralize(item.reviews.size, "review"), food_item_reviews_path(item) %>
             <% end %>
           </p>
-          <%= link_to 'Order', new_food_item_order_path(item), class: "btn btn-primary" %>
+          <%= form_for @order_item, url: {:controller => 'order_items', action: "create"} do |f| %>
+          <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency item.price %></span></h4>
+            <div class="input-group">
+              <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+              <div class="input-group-btn">
+                <%= f.hidden_field :food_item_id, value: item.id %>
+                <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

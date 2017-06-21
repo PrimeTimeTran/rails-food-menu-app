@@ -1,10 +1,9 @@
 class Order < ApplicationRecord
   belongs_to :user
   belongs_to :order_status
-  has_many :order_items, dependent: :destroy
-  validates :name, :address, :phone, numericality: true
+  has_many :order_items
   before_validation :set_order_status
-  before_save :update_subtotal
+  # before_save :update_subtotal
 
   def subtotal
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
