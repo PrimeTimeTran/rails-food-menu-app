@@ -5,7 +5,6 @@ class OrdersController < ApplicationController
 
   def create
     @food_item = FoodItem.find params[:food_item_id]
-
     @order = Order.new(order_params)
     @order.food_item = @food_item
 
@@ -19,17 +18,15 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @order = params[:id]
+    @order = params[:order_id]
   end
 
   def show
-    @food_item = FoodItem.find params[:food_item_id]
-    @price = @food_item.price
-    @order = Order.find params[:id]
+    @order = Order.find(params[:id])
   end
 
   private
   def order_params
-    params.require(:order).permit(:food_item_id)
+    params.require(:order).permit(:id, :food_item_id)
   end
 end

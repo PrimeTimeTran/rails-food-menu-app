@@ -1,10 +1,4 @@
-<h1>Thank you for your Order!</h1>
-  <%= image_tag @food_item.image_url_or_auto %>
-  <h3>Name: </h3>
-    <%=  @order.name %> <br>
-    <%=  @order.phone %> <br>
-    <%=  @order.address %> <br>
-    <%=  @food_item.name%> <br>
-    <%=  @food_item.price %> <br>
-    <%=  @food_item.price + 2 %> <br>
-    <%=  time_ago_in_words(@order.created_at) %>
+<h1>Order Details</h1>
+  <% @order.order_items.each do |item| %>
+    <h6><%= item.food_item.name %>  <%= item.quantity %></h6>
+  <% end %>
