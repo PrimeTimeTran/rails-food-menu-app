@@ -7,6 +7,7 @@ class OrderItemsController < ApplicationController
     @order = current_order
     @order_item = @order.order_items.build(order_item_params)
     @order.save
+    redirect_to menu_path
   end
 
   def update
@@ -26,6 +27,6 @@ class OrderItemsController < ApplicationController
   private
 
   def order_item_params
-    params.require(:order_item).permit(:quantity, :food_item_id, :order_id)
+    params.require(:order_item).permit(:quantity, :food_item_id, :order_id, :unit_price)
   end
 end

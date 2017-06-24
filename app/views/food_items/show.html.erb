@@ -5,7 +5,6 @@
     <div class="container">
       <div>
         <h1><%= @food_item.name %></h1>
-        <%= @food_item.user.email %>
         <p><%= number_to_currency(@food_item.price) %></p>
         <h4>View Count:</h4><%= @food_item.view_count %><br><br>
       </div>
@@ -19,8 +18,6 @@
           <%= link_to 'Edit', edit_food_item_path(@food_item), class: "btn btn-primary" %>
         <% end %>
       <% end %>
-
-      <%= link_to 'Order', new_food_item_order_path(@food_item.id), class: "btn btn-danger" %>
     </div>
 
     <% unless @food_item.reviews.size == 0 %>

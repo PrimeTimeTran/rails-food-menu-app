@@ -36,11 +36,7 @@
                   <i class=""></i> Log Out
                 <% end %>
               </li>
-              <li class="nav-item">
-                <%= link_to order_path(current_user), class: "nav-link" do %>
-                  <i class=""></i> Cart
-                <% end %>
-              </li>
+              <%= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", order_path(current_order), class: "nav-link" %>
             <% else %>
               <li class="nav-item">
                 <%= link_to new_user_registration_path, class: "nav-link" do %>
