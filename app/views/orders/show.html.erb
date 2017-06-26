@@ -1,4 +1,18 @@
 <h1>Order Details</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody>
   <% @order.order_items.each do |item| %>
-    <h6><%= item.food_item.name %>  <%= item.quantity %></h6>
-  <% end %>
+      <tr>
+        <td><%= link_to item.food_item.name, food_items_path+"/#{item.food_item.id}" %></td>
+        <td><%= item.quantity %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>

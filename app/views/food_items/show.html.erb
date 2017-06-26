@@ -23,7 +23,7 @@
     <% unless @food_item.reviews.size == 0 %>
       <%= link_to pluralize(@food_item.reviews.size, "review"), food_item_reviews_path(@food_item) %>
     <% end %>
-
+    <%= render 'review' %>
   <footer>
     <nav>
       <%= link_to "Write Review", new_food_item_review_path(@food_item),

@@ -6,11 +6,12 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @review = @food_item.reviews.new
+    @review = @food_item.reviews.build
   end
 
   def create
     @review = @food_item.reviews.new(review_params)
+    @review.user_id = current_user.id
     if @review.save
       redirect_to food_item_path(@food_item)
     else

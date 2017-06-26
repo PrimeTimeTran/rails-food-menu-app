@@ -1,0 +1,11 @@
+<% @food_item.reviews.each do |r| %>
+  <div class="container">
+    <% if r.user_id.present? %>
+      <i><%= r.user.email %> said:</i> <br />
+    <% else %>
+      <i>Anonymous said:</i> <br />
+    <% end  %>
+      <%= r.stars %> <br>
+      <%= r.review %>
+  </div>
+<% end %>
