@@ -4,3 +4,7 @@
 @import "custom";
 @import "modal";
 @import "font-awesome";
+.navbar .nav > li > .dropdown-menu::after,
+.navbar .nav > li > .dropdown-menu::before {
+  display:none;
+}

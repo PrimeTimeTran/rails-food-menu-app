@@ -31,11 +31,6 @@
                   <i class="fa fa-plus"></i> New Item
                 <% end %>
               </li>
-              <li class="nav-item">
-                <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
-                  <i class=""></i> Log Out
-                <% end %>
-              </li>
               <%= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", order_path(current_order), class: "nav-link" %>
             <% else %>
               <li class="nav-item">
@@ -54,17 +49,26 @@
                <%= submit_tag "Search", class: "btn btn-success" %>
             <% end %>
         </ul>
-          <span class="fa fa-user-circle fa-3x dropdown-toggle" data-toggle="dropdown"></span>
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <i class="fa fa-user-circle fa-2x dropdown-toggle" data-toggle="dropdown"></i>
             <ul class="dropdown-menu">
-              <li class="nav-item">
-                <%= link_to edit_user_registration_path, class: "navbar-right" do %>
-                  Profile
-                  <% end %>
-              </li>
-              <li class="nav-item">
-                <a href="#">Orders</a>
-              </li>
+            <li class="nav-item">
+              <%= link_to edit_user_registration_path, class: "navbar-right" do %>
+                Profile
+                <% end %>
+            </li>
+            <li class="nav-item">
+              <a href="#">Orders</a>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class=""></i> Log Out
+              <% end %>
+            </li>
             </ul>
+          </li>
+        </ul>
   </nav>
     <!-- Flash -->
     <div class="container">
