@@ -1,18 +1,23 @@
 <h1>Order Details</h1>
-
   <table class="table">
     <thead>
       <tr>
-        <th>Item</th>
-        <th>Count</th>
+        <th>Order Item</th>
+        <th>Quantity</th>
+        <th>Save</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
-  <% @order.order_items.each do |item| %>
+    <% @order.order_items.each do |item| %>
       <tr>
         <td><%= link_to item.food_item.name, food_items_path+"/#{item.food_item.id}" %></td>
-        <td><%= item.quantity %></td>
-        <% end %>
+        <%= form_for item do |f| %>
+        <td><%= f.number_field :quantity, value: item.quantity.to_i, class: "form-control", min: 1 %></td>
+        <td><%= f.submit "Update Quantity"%></td>
+          <% end %>
+        <td><%= link_to "Remove", item, { data: { confirm: "Are you sure you wish to remove the product '#{item.food_item.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %></td>
       </tr>
+    <% end %>
     </tbody>
   </table>

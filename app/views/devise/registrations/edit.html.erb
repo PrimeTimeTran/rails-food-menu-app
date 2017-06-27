@@ -4,7 +4,7 @@
 <div class="container">
   <div class="form-group">
   <div class="field">
-    <strong><%= f.label :email %></strong><br />
+    <strong><%= f.label :email %>:</strong><br />
     <%= f.email_field :email, autofocus: true, class: "form-control" %>
   </div>
 
@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <strong><%= f.label :new_password %></strong> <i>(leave blank if you don't want to change it)</i><br />
+    <strong><%= f.label :new_password %>:</strong> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
   </div>
 
@@ -23,20 +23,20 @@
   </div>
 
   <div class="field">
-    <strong><%= f.label :current_password %></strong> <i>(we need your current password to confirm your changes)</i><br />
+    <strong><%= f.label :current_password %>:</strong> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
   </div>
 
   <div class="field">
-    <strong><%= f.label :phone_number %></strong><br />
-    <%= f.password_field :phone_number, autocomplete: "off", class: "form-control" %>
+    <strong><%= f.label :phone_number %>:</strong><br />
+    <%= f.text_field :phone_number, autocomplete: "off", class: "form-control" %>
   </div>
   <div class="field">
-    <strong><%= f.label :address %></strong><br />
+    <strong><%= f.label :address %>:</strong><br />
     <%= f.text_field :address, autocomplete: "off", class: "form-control" %>
   </div>
   <div class="field">
-    <strong><%= f.label :city %></strong><br />
+    <strong><%= f.label :city %>:</strong><br />
     <%= f.text_field :city, autocomplete: "off", class: "form-control" %>
   </div><br>
   <div class="actions">
