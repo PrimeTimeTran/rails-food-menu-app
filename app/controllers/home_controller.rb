@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-
   def index
     if params[:search]
       @food_items = FoodItem.where(['name ILIKE ?', "%#{params[:search]}%"])
@@ -10,12 +9,12 @@ class HomeController < ApplicationController
     @order_item = OrderItem.new
 
     if params[:search]
-      @food_items = FoodItem.where(['name ILIKE ?', "%#{params[:search]}%"])
+      @food_items = FoodItem.search(params[:search], params[:current_page])
     elsif params[:section_id].present?
-      @section = Section.where(id: params[:section_id]).first
-      @food_items = @section.food_items
+      @section = Section.find_by_id(params[:section_id])
+      @food_items = @section.food_items.search(nil, params[:page])
     else
-      @food_items = FoodItem.all
+      @food_items = FoodItem.search(nil, params[:page])
     end
 
     if params[:sort_column]

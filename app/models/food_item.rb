@@ -21,4 +21,14 @@ class FoodItem < ApplicationRecord
   def self.filter_by_section(section)
     where(section: params[:section])
   end
+
+  def self.search(term, current_page)
+    current_page ||= 1 
+
+    if term
+      where('name LIKE ?', "%#{term}%").paginate(page: current_page.to_i, per_page: 10).order('id DESC')
+    else
+      paginate(page: current_page.to_i, per_page: 10).order('id DESC')
+    end
+  end
 end

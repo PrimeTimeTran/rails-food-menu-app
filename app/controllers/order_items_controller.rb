@@ -4,10 +4,15 @@ class OrderItemsController < ApplicationController
   end
 
   def create
-    @order = current_order
-    @order_item = @order.order_items.build(order_item_params)
-    @order.save
-    redirect_to menu_path
+    if current_user.nil?
+      flash[:notice] = "Please Sign in or Create an account before ordering!"
+      redirect_to new_user_registration_path
+    else
+      @order = current_order
+      @order_item = @order.order_items.build(order_item_params)
+      @order.save
+      redirect_to menu_path
+    end
   end
 
   def update

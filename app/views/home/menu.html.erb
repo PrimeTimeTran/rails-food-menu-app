@@ -18,7 +18,7 @@
 </div>
 
 <div class="row">
-  <% @food_items.each do |item| %>
+  <% for item in @food_items %>
     <div class="col-md-4">
       <div class="card" style="width: 20rem;">
         <%= image_tag item.image_url_or_auto, class: "card-img-top" %>
@@ -49,3 +49,4 @@
     </div>
   <% end %>
 </div>
+<%= will_paginate @food_items, :container => false %>
