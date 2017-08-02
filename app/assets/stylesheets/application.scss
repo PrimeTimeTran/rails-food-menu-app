@@ -58,7 +58,6 @@
 .apple_pagination {
   background: #f1f1f1;
   border: 1px solid #e5e5e5;
-  text-align: center;
   padding: 1em;
   cursor: default; }
   .apple_pagination a, .apple_pagination span {
@@ -79,7 +78,7 @@
     text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
   .apple_pagination a {
     text-decoration: none;
-    color: black; }
+  }
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
 

@@ -23,6 +23,16 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @order_items = OrderItem.select {|oi| oi.order_id = @order.id }
+  end
+
+  def update
+    p params 
+    @order = Order.find(params[:id])
+  end
+
+  def submit_order
+    p "hit submit order"
   end
 
   private

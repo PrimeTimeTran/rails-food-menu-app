@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :orders
+  resources :orders do 
+    get 'submit_order', on: :member
+  end
   resources :order_items
 
   resources :food_items do

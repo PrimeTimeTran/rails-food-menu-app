@@ -16,7 +16,6 @@
     <% end %>
   </div>
 </div>
-
 <div class="row">
   <% for item in @food_items %>
     <div class="col-md-4">
@@ -25,7 +24,6 @@
         <div class="card-block">
           <h4 class="card-title"><%= link_to item.name, food_items_path+"/#{item.id}" %></h4><p>
           <p class="card-text">
-            <h4>Description:</h4>
             <p class="description"><%= item.description %></p>
             <h4>Section:</h4>
             <p><%= item.section.name %></p>
@@ -49,4 +47,4 @@
     </div>
   <% end %>
 </div>
-<%= will_paginate @food_items, :container => false %>
+  <%= will_paginate @food_items, :container => false %>

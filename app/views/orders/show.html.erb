@@ -1,4 +1,5 @@
 <h1>Order Details</h1>
+<%= form_for(@order) do |f| %>
   <table class="table">
     <thead>
       <tr>
@@ -9,15 +10,24 @@
       </tr>
     </thead>
     <tbody>
-    <% @order.order_items.each do |item| %>
-      <tr>
-        <td><%= link_to item.food_item.name, food_items_path+"/#{item.food_item.id}" %></td>
-        <%= form_for item do |f| %>
-        <td><%= f.number_field :quantity, value: item.quantity.to_i, class: "form-control", min: 1 %></td>
-        <td><%= f.submit "Update Quantity"%></td>
+
+
+
+        <tr>
+          <% @order.order_items.each do |order_item| %>
+          <td><%= link_to order_item.food_item.name, food_items_path+"/#{order_item.id}" %></td>
+            <%= f.fields_for :order_items, order_item.quantity do |item_form| %>
+              <td><%= item_form.number_field :quantity, value: item_form.quantity.to_i, class: "form-control", min: 1 %></td>
+              <td><%= item_form.submit "Update Quantity"%></td>
+            <% end %>
+          <td><%= link_to "Remove", item, { data: { confirm: "Are you sure you wish to remove the product '#{item.food_item.name}' from your cart?" }, method: :delete, class: "btn btn-danger btn-sm" } %></td>
           <% end %>
-        <td><%= link_to "Remove", item, { data: { confirm: "Are you sure you wish to remove the product '#{item.food_item.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %></td>
-      </tr>
-    <% end %>
+        </tr>
+
+
+
+
     </tbody>
   </table>
+  <%= f.submit "Order" %>
+<% end %>
